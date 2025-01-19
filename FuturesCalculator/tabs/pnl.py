@@ -5,7 +5,8 @@ from PySide6.QtWidgets import (
     QFrame,
     QSlider,
     QStyle,
-    QLineEdit
+    QLineEdit,
+    QPushButton
 )
 
 from .tab import Tab
@@ -25,6 +26,7 @@ class Pnl(Tab):
         self.tab.findChild(QSlider, 'pnlLeverageSlider').mouseMoveEvent = self.leverage_slider_moved
         self.tab.findChild(QLineEdit, 'pnlLeverage').textChanged.connect(self.leverage_input_changed)
         self.tab.findChild(QLineEdit, 'pnlLeverage').editingFinished.connect(self.leverage_input_finished)
+        self.tab.findChild(QPushButton, 'pnlCalculateBtn').clicked.connect(self.calculate_pnl)
 
 
     @Slot(QMouseEvent)
@@ -85,3 +87,27 @@ class Pnl(Tab):
     @Slot(int)
     def update_leverage_input(self, val: int) -> None:
         self.tab.findChild(QLineEdit, 'pnlLeverage').setText(str(val))
+
+
+    @Slot()
+    def calculate_pnl(self) -> None:
+        try:
+            entry_price = float(self.tab.findChild(QLineEdit, 'pnlEntryPrice').text())
+            exit_price = float(self.tab.findChild(QLineEdit, 'pnlExitPrice').text())
+            leverage = float(self.tab.findChild(QLineEdit, 'pnlLeverage').text())
+            quantity = float(self.tab.findChild(QLineEdit, 'pnlQuantity').text())
+        except:
+            self.bad_input('Entry price, exit price, quantity or leverage are either wrong or not filled')
+            return
+
+        initial_margin = entry_price / leverage
+        if self.trade_direction == 'Long':
+            roi = (exit_price - entry_price) / entry_price * 100 * leverage
+        else:
+            roi = (entry_price - exit_price) / entry_price * 100 * leverage
+        pnl = (roi / 100) * quantity
+
+
+        self.tab.findChild(QLineEdit, 'pnlInitialMargin').setText(f'{initial_margin:,.2f} USDT')
+        self.tab.findChild(QLineEdit, 'pnlPnl').setText(f'{pnl:,.2f} USDT')
+        self.tab.findChild(QLineEdit, 'pnlRoi').setText(f'{roi:,.2f} %')
