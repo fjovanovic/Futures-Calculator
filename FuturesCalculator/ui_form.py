@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.3
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -47,24 +47,24 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setSpacing(6)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setSizeConstraint(QLayout.SetMinimumSize)
+        self.horizontalLayout.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.pnlLongFrame = QFrame(self.tabPnl)
         self.pnlLongFrame.setObjectName(u"pnlLongFrame")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pnlLongFrame.sizePolicy().hasHeightForWidth())
         self.pnlLongFrame.setSizePolicy(sizePolicy)
         self.pnlLongFrame.setStyleSheet(u"background-color: rgb(46, 194, 126);")
-        self.pnlLongFrame.setFrameShape(QFrame.StyledPanel)
-        self.pnlLongFrame.setFrameShadow(QFrame.Raised)
+        self.pnlLongFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.pnlLongFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.pnlLongFrame)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.label = QLabel(self.pnlLongFrame)
         self.label.setObjectName(u"label")
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
-        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_3.addWidget(self.label)
 
@@ -76,15 +76,15 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pnlShortFrame.sizePolicy().hasHeightForWidth())
         self.pnlShortFrame.setSizePolicy(sizePolicy)
         self.pnlShortFrame.setStyleSheet(u"background-color: rgb(42, 42, 42);")
-        self.pnlShortFrame.setFrameShape(QFrame.StyledPanel)
-        self.pnlShortFrame.setFrameShadow(QFrame.Raised)
+        self.pnlShortFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.pnlShortFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.pnlShortFrame)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.label_2 = QLabel(self.pnlShortFrame)
         self.label_2.setObjectName(u"label_2")
         sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
         self.label_2.setSizePolicy(sizePolicy)
-        self.label_2.setAlignment(Qt.AlignCenter)
+        self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_4.addWidget(self.label_2)
 
@@ -115,8 +115,8 @@ class Ui_MainWindow(object):
         self.pnlLeverageSlider.setAcceptDrops(True)
         self.pnlLeverageSlider.setMinimum(1)
         self.pnlLeverageSlider.setMaximum(125)
-        self.pnlLeverageSlider.setOrientation(Qt.Horizontal)
-        self.pnlLeverageSlider.setTickPosition(QSlider.TicksAbove)
+        self.pnlLeverageSlider.setOrientation(Qt.Orientation.Horizontal)
+        self.pnlLeverageSlider.setTickPosition(QSlider.TickPosition.TicksAbove)
         self.pnlLeverageSlider.setTickInterval(25)
 
         self.horizontalLayout_2.addWidget(self.pnlLeverageSlider)
@@ -150,7 +150,7 @@ class Ui_MainWindow(object):
         self.pnlEntryPrice.setObjectName(u"pnlEntryPrice")
         self.pnlEntryPrice.setAcceptDrops(True)
         self.pnlEntryPrice.setToolTipDuration(0)
-        self.pnlEntryPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlEntryPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.pnlEntryPrice)
 
@@ -161,7 +161,7 @@ class Ui_MainWindow(object):
 
         self.pnlExitPrice = QLineEdit(self.tabPnl)
         self.pnlExitPrice.setObjectName(u"pnlExitPrice")
-        self.pnlExitPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlExitPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.pnlExitPrice)
 
@@ -177,14 +177,14 @@ class Ui_MainWindow(object):
 
         self.pnlQuantity = QLineEdit(self.tabPnl)
         self.pnlQuantity.setObjectName(u"pnlQuantity")
-        self.pnlQuantity.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlQuantity.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.pnlQuantity)
 
         self.pnlLeverage = QLineEdit(self.tabPnl)
         self.pnlLeverage.setObjectName(u"pnlLeverage")
-        self.pnlLeverage.setLayoutDirection(Qt.LeftToRight)
-        self.pnlLeverage.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlLeverage.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.pnlLeverage.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.pnlLeverage)
 
@@ -221,7 +221,7 @@ class Ui_MainWindow(object):
         self.label_10.setObjectName(u"label_10")
         sizePolicy.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
         self.label_10.setSizePolicy(sizePolicy)
-        self.label_10.setAlignment(Qt.AlignCenter)
+        self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_5.addWidget(self.label_10)
 
@@ -251,21 +251,21 @@ class Ui_MainWindow(object):
 
         self.pnlInitialMargin = QLineEdit(self.tabPnl)
         self.pnlInitialMargin.setObjectName(u"pnlInitialMargin")
-        self.pnlInitialMargin.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlInitialMargin.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.pnlInitialMargin.setReadOnly(True)
 
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.pnlInitialMargin)
 
         self.pnlPnl = QLineEdit(self.tabPnl)
         self.pnlPnl.setObjectName(u"pnlPnl")
-        self.pnlPnl.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlPnl.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.pnlPnl.setReadOnly(True)
 
         self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.pnlPnl)
 
         self.pnlRoi = QLineEdit(self.tabPnl)
         self.pnlRoi.setObjectName(u"pnlRoi")
-        self.pnlRoi.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.pnlRoi.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.pnlRoi.setReadOnly(True)
 
         self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.pnlRoi)
@@ -287,21 +287,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setSpacing(6)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setSizeConstraint(QLayout.SetMinimumSize)
+        self.horizontalLayout_4.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.liqLongFrame = QFrame(self.tabLiquidationPrice)
         self.liqLongFrame.setObjectName(u"liqLongFrame")
         sizePolicy.setHeightForWidth(self.liqLongFrame.sizePolicy().hasHeightForWidth())
         self.liqLongFrame.setSizePolicy(sizePolicy)
         self.liqLongFrame.setStyleSheet(u"background-color: rgb(46, 194, 126);")
-        self.liqLongFrame.setFrameShape(QFrame.StyledPanel)
-        self.liqLongFrame.setFrameShadow(QFrame.Raised)
+        self.liqLongFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.liqLongFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.liqLongFrame)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.label_3 = QLabel(self.liqLongFrame)
         self.label_3.setObjectName(u"label_3")
         sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
         self.label_3.setSizePolicy(sizePolicy)
-        self.label_3.setAlignment(Qt.AlignCenter)
+        self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_6.addWidget(self.label_3)
 
@@ -313,15 +313,15 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.liqShortFrame.sizePolicy().hasHeightForWidth())
         self.liqShortFrame.setSizePolicy(sizePolicy)
         self.liqShortFrame.setStyleSheet(u"background-color: rgb(42, 42, 42);")
-        self.liqShortFrame.setFrameShape(QFrame.StyledPanel)
-        self.liqShortFrame.setFrameShadow(QFrame.Raised)
+        self.liqShortFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.liqShortFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.liqShortFrame)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.label_14 = QLabel(self.liqShortFrame)
         self.label_14.setObjectName(u"label_14")
         sizePolicy.setHeightForWidth(self.label_14.sizePolicy().hasHeightForWidth())
         self.label_14.setSizePolicy(sizePolicy)
-        self.label_14.setAlignment(Qt.AlignCenter)
+        self.label_14.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_7.addWidget(self.label_14)
 
@@ -351,8 +351,8 @@ class Ui_MainWindow(object):
         self.liqLeverageSlider.setObjectName(u"liqLeverageSlider")
         self.liqLeverageSlider.setMinimum(1)
         self.liqLeverageSlider.setMaximum(125)
-        self.liqLeverageSlider.setOrientation(Qt.Horizontal)
-        self.liqLeverageSlider.setTickPosition(QSlider.TicksAbove)
+        self.liqLeverageSlider.setOrientation(Qt.Orientation.Horizontal)
+        self.liqLeverageSlider.setTickPosition(QSlider.TickPosition.TicksAbove)
         self.liqLeverageSlider.setTickInterval(25)
 
         self.horizontalLayout_5.addWidget(self.liqLeverageSlider)
@@ -398,25 +398,25 @@ class Ui_MainWindow(object):
 
         self.liqEntryPrice = QLineEdit(self.tabLiquidationPrice)
         self.liqEntryPrice.setObjectName(u"liqEntryPrice")
-        self.liqEntryPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.liqEntryPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.liqEntryPrice)
 
         self.liqQuantity = QLineEdit(self.tabLiquidationPrice)
         self.liqQuantity.setObjectName(u"liqQuantity")
-        self.liqQuantity.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.liqQuantity.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.liqQuantity)
 
         self.liqLeverage = QLineEdit(self.tabLiquidationPrice)
         self.liqLeverage.setObjectName(u"liqLeverage")
-        self.liqLeverage.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.liqLeverage.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.liqLeverage)
 
         self.lilqBalance = QLineEdit(self.tabLiquidationPrice)
         self.lilqBalance.setObjectName(u"lilqBalance")
-        self.lilqBalance.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.lilqBalance.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lilqBalance)
 
@@ -453,7 +453,7 @@ class Ui_MainWindow(object):
         self.label_21.setObjectName(u"label_21")
         sizePolicy.setHeightForWidth(self.label_21.sizePolicy().hasHeightForWidth())
         self.label_21.setSizePolicy(sizePolicy)
-        self.label_21.setAlignment(Qt.AlignCenter)
+        self.label_21.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_9.addWidget(self.label_21)
 
@@ -473,7 +473,7 @@ class Ui_MainWindow(object):
 
         self.liqLiquidationPrice = QLineEdit(self.tabLiquidationPrice)
         self.liqLiquidationPrice.setObjectName(u"liqLiquidationPrice")
-        self.liqLiquidationPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.liqLiquidationPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.liqLiquidationPrice.setReadOnly(True)
 
         self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.liqLiquidationPrice)
@@ -495,21 +495,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setSpacing(6)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setSizeConstraint(QLayout.SetMinimumSize)
+        self.horizontalLayout_7.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.targetLongFrame = QFrame(self.tabTargetPrice)
         self.targetLongFrame.setObjectName(u"targetLongFrame")
         sizePolicy.setHeightForWidth(self.targetLongFrame.sizePolicy().hasHeightForWidth())
         self.targetLongFrame.setSizePolicy(sizePolicy)
         self.targetLongFrame.setStyleSheet(u"background-color: rgb(46, 194, 126);")
-        self.targetLongFrame.setFrameShape(QFrame.StyledPanel)
-        self.targetLongFrame.setFrameShadow(QFrame.Raised)
+        self.targetLongFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.targetLongFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_11 = QVBoxLayout(self.targetLongFrame)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.label_23 = QLabel(self.targetLongFrame)
         self.label_23.setObjectName(u"label_23")
         sizePolicy.setHeightForWidth(self.label_23.sizePolicy().hasHeightForWidth())
         self.label_23.setSizePolicy(sizePolicy)
-        self.label_23.setAlignment(Qt.AlignCenter)
+        self.label_23.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_11.addWidget(self.label_23)
 
@@ -521,15 +521,15 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.targetShortFrame.sizePolicy().hasHeightForWidth())
         self.targetShortFrame.setSizePolicy(sizePolicy)
         self.targetShortFrame.setStyleSheet(u"background-color: rgb(42, 42, 42);")
-        self.targetShortFrame.setFrameShape(QFrame.StyledPanel)
-        self.targetShortFrame.setFrameShadow(QFrame.Raised)
+        self.targetShortFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.targetShortFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.targetShortFrame)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_24 = QLabel(self.targetShortFrame)
         self.label_24.setObjectName(u"label_24")
         sizePolicy.setHeightForWidth(self.label_24.sizePolicy().hasHeightForWidth())
         self.label_24.setSizePolicy(sizePolicy)
-        self.label_24.setAlignment(Qt.AlignCenter)
+        self.label_24.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_12.addWidget(self.label_24)
 
@@ -555,15 +555,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.label_25)
 
-        self.horizontalSlider = QSlider(self.tabTargetPrice)
-        self.horizontalSlider.setObjectName(u"horizontalSlider")
-        self.horizontalSlider.setMinimum(1)
-        self.horizontalSlider.setMaximum(125)
-        self.horizontalSlider.setOrientation(Qt.Horizontal)
-        self.horizontalSlider.setTickPosition(QSlider.TicksAbove)
-        self.horizontalSlider.setTickInterval(25)
+        self.targetLeverageSlider = QSlider(self.tabTargetPrice)
+        self.targetLeverageSlider.setObjectName(u"targetLeverageSlider")
+        self.targetLeverageSlider.setMinimum(1)
+        self.targetLeverageSlider.setMaximum(125)
+        self.targetLeverageSlider.setOrientation(Qt.Orientation.Horizontal)
+        self.targetLeverageSlider.setTickPosition(QSlider.TickPosition.TicksAbove)
+        self.targetLeverageSlider.setTickInterval(25)
 
-        self.horizontalLayout_8.addWidget(self.horizontalSlider)
+        self.horizontalLayout_8.addWidget(self.targetLeverageSlider)
 
         self.label_26 = QLabel(self.tabTargetPrice)
         self.label_26.setObjectName(u"label_26")
@@ -591,7 +591,7 @@ class Ui_MainWindow(object):
 
         self.targetEntryPrice = QLineEdit(self.tabTargetPrice)
         self.targetEntryPrice.setObjectName(u"targetEntryPrice")
-        self.targetEntryPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.targetEntryPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.targetEntryPrice)
 
@@ -602,7 +602,7 @@ class Ui_MainWindow(object):
 
         self.targetLeverage = QLineEdit(self.tabTargetPrice)
         self.targetLeverage.setObjectName(u"targetLeverage")
-        self.targetLeverage.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.targetLeverage.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_5.setWidget(1, QFormLayout.FieldRole, self.targetLeverage)
 
@@ -613,7 +613,7 @@ class Ui_MainWindow(object):
 
         self.targetRoi = QLineEdit(self.tabTargetPrice)
         self.targetRoi.setObjectName(u"targetRoi")
-        self.targetRoi.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.targetRoi.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_5.setWidget(2, QFormLayout.FieldRole, self.targetRoi)
 
@@ -650,7 +650,7 @@ class Ui_MainWindow(object):
         self.label_30.setObjectName(u"label_30")
         sizePolicy.setHeightForWidth(self.label_30.sizePolicy().hasHeightForWidth())
         self.label_30.setSizePolicy(sizePolicy)
-        self.label_30.setAlignment(Qt.AlignCenter)
+        self.label_30.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_14.addWidget(self.label_30)
 
@@ -670,7 +670,7 @@ class Ui_MainWindow(object):
 
         self.targetTargetPrice = QLineEdit(self.tabTargetPrice)
         self.targetTargetPrice.setObjectName(u"targetTargetPrice")
-        self.targetTargetPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.targetTargetPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_6.setWidget(0, QFormLayout.FieldRole, self.targetTargetPrice)
 
@@ -691,21 +691,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout()
         self.horizontalLayout_10.setSpacing(6)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setSizeConstraint(QLayout.SetMinimumSize)
+        self.horizontalLayout_10.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.tpslLongFrame = QFrame(self.tabTpSl)
         self.tpslLongFrame.setObjectName(u"tpslLongFrame")
         sizePolicy.setHeightForWidth(self.tpslLongFrame.sizePolicy().hasHeightForWidth())
         self.tpslLongFrame.setSizePolicy(sizePolicy)
         self.tpslLongFrame.setStyleSheet(u"background-color: rgb(46, 194, 126);")
-        self.tpslLongFrame.setFrameShape(QFrame.StyledPanel)
-        self.tpslLongFrame.setFrameShadow(QFrame.Raised)
+        self.tpslLongFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.tpslLongFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_16 = QVBoxLayout(self.tpslLongFrame)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.label_32 = QLabel(self.tpslLongFrame)
         self.label_32.setObjectName(u"label_32")
         sizePolicy.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
         self.label_32.setSizePolicy(sizePolicy)
-        self.label_32.setAlignment(Qt.AlignCenter)
+        self.label_32.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_16.addWidget(self.label_32)
 
@@ -717,15 +717,15 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.tpslShortFrame.sizePolicy().hasHeightForWidth())
         self.tpslShortFrame.setSizePolicy(sizePolicy)
         self.tpslShortFrame.setStyleSheet(u"background-color: rgb(42, 42, 42);")
-        self.tpslShortFrame.setFrameShape(QFrame.StyledPanel)
-        self.tpslShortFrame.setFrameShadow(QFrame.Raised)
+        self.tpslShortFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.tpslShortFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_17 = QVBoxLayout(self.tpslShortFrame)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.label_33 = QLabel(self.tpslShortFrame)
         self.label_33.setObjectName(u"label_33")
         sizePolicy.setHeightForWidth(self.label_33.sizePolicy().hasHeightForWidth())
         self.label_33.setSizePolicy(sizePolicy)
-        self.label_33.setAlignment(Qt.AlignCenter)
+        self.label_33.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_17.addWidget(self.label_33)
 
@@ -755,8 +755,8 @@ class Ui_MainWindow(object):
         self.tpslLeverageSlider.setObjectName(u"tpslLeverageSlider")
         self.tpslLeverageSlider.setMinimum(1)
         self.tpslLeverageSlider.setMaximum(125)
-        self.tpslLeverageSlider.setOrientation(Qt.Horizontal)
-        self.tpslLeverageSlider.setTickPosition(QSlider.TicksAbove)
+        self.tpslLeverageSlider.setOrientation(Qt.Orientation.Horizontal)
+        self.tpslLeverageSlider.setTickPosition(QSlider.TickPosition.TicksAbove)
         self.tpslLeverageSlider.setTickInterval(25)
 
         self.horizontalLayout_11.addWidget(self.tpslLeverageSlider)
@@ -802,25 +802,25 @@ class Ui_MainWindow(object):
 
         self.tpslEntryPrice = QLineEdit(self.tabTpSl)
         self.tpslEntryPrice.setObjectName(u"tpslEntryPrice")
-        self.tpslEntryPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tpslEntryPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_7.setWidget(0, QFormLayout.FieldRole, self.tpslEntryPrice)
 
         self.tpslLeverage = QLineEdit(self.tabTpSl)
         self.tpslLeverage.setObjectName(u"tpslLeverage")
-        self.tpslLeverage.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tpslLeverage.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_7.setWidget(1, QFormLayout.FieldRole, self.tpslLeverage)
 
         self.tpslTakeProfit = QLineEdit(self.tabTpSl)
         self.tpslTakeProfit.setObjectName(u"tpslTakeProfit")
-        self.tpslTakeProfit.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tpslTakeProfit.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_7.setWidget(2, QFormLayout.FieldRole, self.tpslTakeProfit)
 
         self.tpslStopLoss = QLineEdit(self.tabTpSl)
         self.tpslStopLoss.setObjectName(u"tpslStopLoss")
-        self.tpslStopLoss.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tpslStopLoss.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_7.setWidget(3, QFormLayout.FieldRole, self.tpslStopLoss)
 
@@ -857,7 +857,7 @@ class Ui_MainWindow(object):
         self.label_40.setObjectName(u"label_40")
         sizePolicy.setHeightForWidth(self.label_40.sizePolicy().hasHeightForWidth())
         self.label_40.setSizePolicy(sizePolicy)
-        self.label_40.setAlignment(Qt.AlignCenter)
+        self.label_40.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_18.addWidget(self.label_40)
 
@@ -877,7 +877,7 @@ class Ui_MainWindow(object):
 
         self.tpslTakeProfitPrice = QLineEdit(self.tabTpSl)
         self.tpslTakeProfitPrice.setObjectName(u"tpslTakeProfitPrice")
-        self.tpslTakeProfitPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tpslTakeProfitPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.tpslTakeProfitPrice.setReadOnly(True)
 
         self.formLayout_8.setWidget(0, QFormLayout.FieldRole, self.tpslTakeProfitPrice)
@@ -889,7 +889,7 @@ class Ui_MainWindow(object):
 
         self.tpslStopLossPrice = QLineEdit(self.tabTpSl)
         self.tpslStopLossPrice.setObjectName(u"tpslStopLossPrice")
-        self.tpslStopLossPrice.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.tpslStopLossPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
         self.tpslStopLossPrice.setReadOnly(True)
 
         self.formLayout_8.setWidget(1, QFormLayout.FieldRole, self.tpslStopLossPrice)
@@ -907,7 +907,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 800, 21))
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
         MainWindow.setMenuBar(self.menubar)
