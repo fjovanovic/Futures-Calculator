@@ -1,8 +1,6 @@
 from typing import Tuple
 
-from PySide6.QtWidgets import (
-    QWidget
-)
+from PySide6.QtWidgets import QWidget, QMessageBox
 
 
 class Tab(QWidget):
@@ -17,3 +15,11 @@ class Tab(QWidget):
         blue = bg_color.blue()
 
         return (red, green, blue)
+
+
+    def bad_input(self, message: str) -> None:
+        alert = QMessageBox()
+        alert.setIcon(QMessageBox.Warning)
+        alert.setText(message)
+        alert.setWindowTitle('Alert error message box')
+        alert.exec()
