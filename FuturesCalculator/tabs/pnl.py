@@ -19,6 +19,8 @@ class Pnl(Tab):
     def __init__(self, tab: QWidget):
         super().__init__()
         self.tab = tab
+        self.set_non_active_style_sheet()
+        self.set_short_frame_default_bg('pnlShortFrame')
 
         self.tab.findChild(QFrame, 'pnlLongFrame').mousePressEvent = self.long_frame_pressed
         self.tab.findChild(QFrame, 'pnlShortFrame').mousePressEvent = self.short_frame_pressed
@@ -32,17 +34,15 @@ class Pnl(Tab):
     @Slot(QMouseEvent)
     def long_frame_pressed(self, event: QMouseEvent) -> None:
         self.trade_direction = 'Long'
-        self.tab.findChild(QFrame, 'pnlLongFrame').setStyleSheet('background-color: rgb(46, 194, 126);')
-        (red, green, blue) = self.get_background_color()
-        self.tab.findChild(QFrame, 'pnlShortFrame').setStyleSheet(f'background-color: rgb({red}, {green}, {blue});')
+        self.tab.findChild(QFrame, 'pnlLongFrame').setStyleSheet(self.long_style_sheet)
+        self.tab.findChild(QFrame, 'pnlShortFrame').setStyleSheet(self.non_active_style_sheet)
 
 
     @Slot(QMouseEvent)
     def short_frame_pressed(self, event: QMouseEvent) -> None:
         self.trade_direction = 'Short'
-        self.tab.findChild(QFrame, 'pnlShortFrame').setStyleSheet('background-color: rgb(246, 97, 81);')
-        (red, green, blue) = self.get_background_color()
-        self.tab.findChild(QFrame, 'pnlLongFrame').setStyleSheet(f'background-color: rgb({red}, {green}, {blue});')
+        self.tab.findChild(QFrame, 'pnlShortFrame').setStyleSheet(self.short_style_sheet)
+        self.tab.findChild(QFrame, 'pnlLongFrame').setStyleSheet(self.non_active_style_sheet)
 
 
     @Slot(QMouseEvent)
