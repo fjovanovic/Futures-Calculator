@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Futures Calculator</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -46,8 +49,12 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(46, 194, 126);</string>
+               <string notr="true">background-color: rgb(46, 194, 126);
+border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -63,6 +70,9 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Long</string>
@@ -83,8 +93,12 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(42, 42, 42);</string>
+               <string notr="true">background-color: rgb(240, 240, 240);
+border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -100,6 +114,9 @@
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Short</string>
@@ -141,6 +158,9 @@
             </item>
             <item>
              <widget class="QSlider" name="pnlLeverageSlider">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="acceptDrops">
                <bool>true</bool>
               </property>
@@ -191,7 +211,7 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label_6">
               <property name="text">
-               <string>Entry Price</string>
+               <string>Entry Price:</string>
               </property>
              </widget>
             </item>
@@ -211,7 +231,7 @@
             <item row="1" column="0">
              <widget class="QLabel" name="label_7">
               <property name="text">
-               <string>Exit Price</string>
+               <string>Exit Price:</string>
               </property>
              </widget>
             </item>
@@ -225,14 +245,14 @@
             <item row="2" column="0">
              <widget class="QLabel" name="label_8">
               <property name="text">
-               <string>Quantity (USDT)</string>
+               <string>Quantity (USDT):</string>
               </property>
              </widget>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_9">
               <property name="text">
-               <string>Leverage</string>
+               <string>Leverage:</string>
               </property>
              </widget>
             </item>
@@ -267,6 +287,9 @@
           </item>
           <item>
            <widget class="QPushButton" name="pnlCalculateBtn">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(229, 165, 10);
 color: rgb(0, 0, 0);</string>
@@ -315,21 +338,21 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_11">
               <property name="text">
-               <string>Initial Margin</string>
+               <string>Initial Margin:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_12">
               <property name="text">
-               <string>PNL</string>
+               <string>PNL:</string>
               </property>
              </widget>
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_13">
               <property name="text">
-               <string>ROI</string>
+               <string>ROI:</string>
               </property>
              </widget>
             </item>
@@ -404,8 +427,12 @@ color: rgb(0, 0, 0);</string>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(46, 194, 126);</string>
+               <string notr="true">background-color: rgb(46, 194, 126);
+border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -421,6 +448,9 @@ color: rgb(0, 0, 0);</string>
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Long</string>
@@ -441,8 +471,11 @@ color: rgb(0, 0, 0);</string>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(42, 42, 42);</string>
+               <string notr="true">border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -458,6 +491,9 @@ color: rgb(0, 0, 0);</string>
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Short</string>
@@ -496,6 +532,9 @@ color: rgb(0, 0, 0);</string>
             </item>
             <item>
              <widget class="QSlider" name="liqLeverageSlider">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="minimum">
                <number>1</number>
               </property>
@@ -540,28 +579,28 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_17">
               <property name="text">
-               <string>Entry Price</string>
+               <string>Entry Price:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_18">
               <property name="text">
-               <string>Quantity (USDT)</string>
+               <string>Quantity (USDT):</string>
               </property>
              </widget>
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_19">
               <property name="text">
-               <string>Leverage</string>
+               <string>Leverage:</string>
               </property>
              </widget>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_20">
               <property name="text">
-               <string>Balance (USDT)</string>
+               <string>Balance (USDT):</string>
               </property>
              </widget>
             </item>
@@ -607,6 +646,9 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item>
            <widget class="QPushButton" name="liqCalculateBtn">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(229, 165, 10);
 color: rgb(0, 0, 0);</string>
@@ -655,7 +697,7 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_22">
               <property name="text">
-               <string>Liquidation Price</string>
+               <string>Liquidation Price:</string>
               </property>
              </widget>
             </item>
@@ -701,8 +743,12 @@ color: rgb(0, 0, 0);</string>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(46, 194, 126);</string>
+               <string notr="true">background-color: rgb(46, 194, 126);
+border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -718,6 +764,9 @@ color: rgb(0, 0, 0);</string>
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Long</string>
@@ -738,8 +787,11 @@ color: rgb(0, 0, 0);</string>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(42, 42, 42);</string>
+               <string notr="true">border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -755,6 +807,9 @@ color: rgb(0, 0, 0);</string>
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Short</string>
@@ -793,6 +848,9 @@ color: rgb(0, 0, 0);</string>
             </item>
             <item>
              <widget class="QSlider" name="targetLeverageSlider">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="minimum">
                <number>1</number>
               </property>
@@ -837,7 +895,7 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_27">
               <property name="text">
-               <string>Entry Price</string>
+               <string>Entry Price:</string>
               </property>
              </widget>
             </item>
@@ -851,7 +909,7 @@ color: rgb(0, 0, 0);</string>
             <item row="1" column="0">
              <widget class="QLabel" name="label_28">
               <property name="text">
-               <string>Leverage</string>
+               <string>Leverage:</string>
               </property>
              </widget>
             </item>
@@ -868,7 +926,7 @@ color: rgb(0, 0, 0);</string>
             <item row="2" column="0">
              <widget class="QLabel" name="label_29">
               <property name="text">
-               <string>ROI (%)</string>
+               <string>ROI (%):</string>
               </property>
              </widget>
             </item>
@@ -889,7 +947,10 @@ color: rgb(0, 0, 0);</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="targetCalculateBtn">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(229, 165, 10);
 color: rgb(0, 0, 0);</string>
@@ -938,7 +999,7 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_31">
               <property name="text">
-               <string>Target Price</string>
+               <string>Target Price:</string>
               </property>
              </widget>
             </item>
@@ -981,8 +1042,12 @@ color: rgb(0, 0, 0);</string>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(46, 194, 126);</string>
+               <string notr="true">background-color: rgb(46, 194, 126);
+border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -998,6 +1063,9 @@ color: rgb(0, 0, 0);</string>
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Long</string>
@@ -1018,8 +1086,11 @@ color: rgb(0, 0, 0);</string>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(42, 42, 42);</string>
+               <string notr="true">border: 1px solid #000000;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::Shape::StyledPanel</enum>
@@ -1035,6 +1106,9 @@ color: rgb(0, 0, 0);</string>
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: none;</string>
                  </property>
                  <property name="text">
                   <string>Short</string>
@@ -1073,6 +1147,9 @@ color: rgb(0, 0, 0);</string>
             </item>
             <item>
              <widget class="QSlider" name="tpslLeverageSlider">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="minimum">
                <number>1</number>
               </property>
@@ -1117,28 +1194,28 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_36">
               <property name="text">
-               <string>Entry Price</string>
+               <string>Entry Price:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_37">
               <property name="text">
-               <string>Leverage</string>
+               <string>Leverage:</string>
               </property>
              </widget>
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_38">
               <property name="text">
-               <string>Take Profit (%)</string>
+               <string>Take Profit (%):</string>
               </property>
              </widget>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_39">
               <property name="text">
-               <string>Stop Loss (%)</string>
+               <string>Stop Loss (%):</string>
               </property>
              </widget>
             </item>
@@ -1184,6 +1261,9 @@ color: rgb(0, 0, 0);</string>
           </item>
           <item>
            <widget class="QPushButton" name="tpslCalculateBtn">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(229, 165, 10);
 color: rgb(0, 0, 0);</string>
@@ -1232,7 +1312,7 @@ color: rgb(0, 0, 0);</string>
             <item row="0" column="0">
              <widget class="QLabel" name="label_41">
               <property name="text">
-               <string>Take Profit Price</string>
+               <string>Take Profit Price:</string>
               </property>
              </widget>
             </item>
@@ -1249,7 +1329,7 @@ color: rgb(0, 0, 0);</string>
             <item row="1" column="0">
              <widget class="QLabel" name="label_42">
               <property name="text">
-               <string>Stop Loss Price</string>
+               <string>Stop Loss Price:</string>
               </property>
              </widget>
             </item>
@@ -1293,7 +1373,7 @@ color: rgb(0, 0, 0);</string>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="exitAction">
    <property name="icon">
-    <iconset theme="application-exit"/>
+    <iconset theme="QIcon::ThemeIcon::ApplicationExit"/>
    </property>
    <property name="text">
     <string>Exit                             Ctrl+Q</string>
