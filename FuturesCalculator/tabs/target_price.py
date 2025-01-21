@@ -5,7 +5,8 @@ from PySide6.QtWidgets import (
     QFrame,
     QSlider,
     QStyle,
-    QLineEdit
+    QLineEdit,
+    QPushButton
 )
 
 from .tab import Tab
@@ -18,6 +19,8 @@ class TargetPrice(Tab):
     def __init__(self, tab: QWidget):
         super().__init__()
         self.tab = tab
+        self.set_non_active_style_sheet()
+        self.set_short_frame_default_bg('targetShortFrame')
 
         self.tab.findChild(QFrame, 'targetLongFrame').mousePressEvent = self.long_frame_pressed
         self.tab.findChild(QFrame, 'targetShortFrame').mousePressEvent = self.short_frame_pressed
@@ -25,22 +28,21 @@ class TargetPrice(Tab):
         self.tab.findChild(QSlider, 'targetLeverageSlider').mouseMoveEvent = self.leverage_slider_moved
         self.tab.findChild(QLineEdit, 'targetLeverage').textChanged.connect(self.leverage_input_changed)
         self.tab.findChild(QLineEdit, 'targetLeverage').editingFinished.connect(self.leverage_input_finished)
+        self.tab.findChild(QPushButton, 'targetCalculateBtn').clicked.connect(self.calculate_target_price)
 
 
     @Slot(QMouseEvent)
     def long_frame_pressed(self, event: QMouseEvent) -> None:
         self.trade_direction = 'Long'
-        self.tab.findChild(QFrame, 'targetLongFrame').setStyleSheet('background-color: rgb(46, 194, 126);')
-        (red, green, blue) = self.get_background_color()
-        self.tab.findChild(QFrame, 'targetShortFrame').setStyleSheet(f'background-color: rgb({red}, {green}, {blue});')
+        self.tab.findChild(QFrame, 'targetLongFrame').setStyleSheet(self.long_style_sheet)
+        self.tab.findChild(QFrame, 'targetShortFrame').setStyleSheet(self.non_active_style_sheet)
 
 
     @Slot(QMouseEvent)
     def short_frame_pressed(self, event: QMouseEvent) -> None:
         self.trade_direction = 'Short'
-        self.tab.findChild(QFrame, 'targetShortFrame').setStyleSheet('background-color: rgb(246, 97, 81);')
-        (red, green, blue) = self.get_background_color()
-        self.tab.findChild(QFrame, 'targetLongFrame').setStyleSheet(f'background-color: rgb({red}, {green}, {blue});')
+        self.tab.findChild(QFrame, 'targetShortFrame').setStyleSheet(self.short_style_sheet)
+        self.tab.findChild(QFrame, 'targetLongFrame').setStyleSheet(self.non_active_style_sheet)
 
 
     @Slot(QMouseEvent)
@@ -85,3 +87,23 @@ class TargetPrice(Tab):
     @Slot(int)
     def update_leverage_input(self, val: int) -> None:
         self.tab.findChild(QLineEdit, 'targetLeverage').setText(str(val))
+
+
+    @Slot()
+    def calculate_target_price(self) -> None:
+        try:
+            entry_price = float(self.tab.findChild(QLineEdit, 'targetEntryPrice').text())
+            leverage = float(self.tab.findChild(QLineEdit, 'targetLeverage').text())
+            roi = float(self.tab.findChild(QLineEdit, 'targetRoi').text())
+            if roi < 0:
+                raise Exception
+        except:
+            self.bad_input('Entry price, leverage or ROI are either wrong or not filled')
+            return
+
+        if self.trade_direction == 'Long':
+            target_price = entry_price + (entry_price * roi / 100 * 1 / leverage)
+        else:
+            target_price = entry_price - (entry_price * roi / 100 * 1 / leverage)
+
+        self.tab.findChild(QLineEdit, 'targetTargetPrice').setText(f'{target_price:,.2f} USDT')
