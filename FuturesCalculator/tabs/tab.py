@@ -1,7 +1,11 @@
 from typing import Tuple
 from textwrap import dedent
 
-from PySide6.QtWidgets import QWidget, QMessageBox
+from PySide6.QtWidgets import (
+    QWidget,
+    QMessageBox,
+    QFrame
+)
 
 
 class Tab(QWidget):
@@ -39,6 +43,10 @@ class Tab(QWidget):
             background-color: rgb({red}, {green}, {blue});
             border: 1px solid #000000;
         ''')
+
+
+    def set_short_frame_default_bg(self, name: str) -> None:
+        self.tab.findChild(QFrame, name).setStyleSheet(self.non_active_style_sheet)
 
 
     def bad_input(self, message: str) -> None:
