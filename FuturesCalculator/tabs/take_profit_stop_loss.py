@@ -5,7 +5,8 @@ from PySide6.QtWidgets import (
     QFrame,
     QSlider,
     QStyle,
-    QLineEdit
+    QLineEdit,
+    QPushButton
 )
 
 from .tab import Tab
@@ -27,6 +28,7 @@ class TakeProfitStopLoss(Tab):
         self.tab.findChild(QSlider, 'tpslLeverageSlider').mouseMoveEvent = self.leverage_slider_moved
         self.tab.findChild(QLineEdit, 'tpslLeverage').textChanged.connect(self.leverage_input_changed)
         self.tab.findChild(QLineEdit, 'tpslLeverage').editingFinished.connect(self.leverage_input_finished)
+        self.tab.findChild(QPushButton, 'tpslCalculateBtn').clicked.connect(self.calculate_pnl)
 
 
     @Slot(QMouseEvent)
@@ -87,3 +89,25 @@ class TakeProfitStopLoss(Tab):
     @Slot(int)
     def update_leverage_input(self, val: int) -> None:
         self.tab.findChild(QLineEdit, 'tpslLeverage').setText(str(val))
+
+
+    @Slot()
+    def calculate_pnl(self) -> None:
+        try:
+            entry_price = float(self.tab.findChild(QLineEdit, 'tpslEntryPrice').text())
+            leverage = float(self.tab.findChild(QLineEdit, 'tpslLeverage').text())
+            take_profit_perc = float(self.tab.findChild(QLineEdit, 'tpslTakeProfit').text())
+            stop_loss_perc = float(self.tab.findChild(QLineEdit, 'tpslStopLoss').text())
+        except:
+            self.bad_input('Entry price, leverage, take profit or stop loss percentage are either wrong or not filled')
+            return
+
+        if self.trade_direction == 'Long':
+            take_profit = entry_price + (entry_price * take_profit_perc / 100 * 1 / leverage)
+            stop_loss = entry_price - (entry_price * stop_loss_perc / 100 * 1 / leverage)
+        else:
+            take_profit = entry_price - (entry_price * take_profit_perc / 100 * 1 / leverage)
+            stop_loss = entry_price + (entry_price * stop_loss_perc / 100 * 1 / leverage)
+
+        self.tab.findChild(QLineEdit, 'tpslTakeProfitPrice').setText(f'{take_profit:,.2f}')
+        self.tab.findChild(QLineEdit, 'tpslStopLossPrice').setText(f'{stop_loss:,.2f}')
