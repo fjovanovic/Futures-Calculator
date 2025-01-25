@@ -396,44 +396,22 @@ class Ui_MainWindow(object):
 
         self.formLayout_3.setWidget(0, QFormLayout.LabelRole, self.label_17)
 
-        self.label_18 = QLabel(self.tabLiquidationPrice)
-        self.label_18.setObjectName(u"label_18")
-
-        self.formLayout_3.setWidget(1, QFormLayout.LabelRole, self.label_18)
-
-        self.label_19 = QLabel(self.tabLiquidationPrice)
-        self.label_19.setObjectName(u"label_19")
-
-        self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.label_19)
-
-        self.label_20 = QLabel(self.tabLiquidationPrice)
-        self.label_20.setObjectName(u"label_20")
-
-        self.formLayout_3.setWidget(3, QFormLayout.LabelRole, self.label_20)
-
         self.liqEntryPrice = QLineEdit(self.tabLiquidationPrice)
         self.liqEntryPrice.setObjectName(u"liqEntryPrice")
         self.liqEntryPrice.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.liqEntryPrice)
 
-        self.liqQuantity = QLineEdit(self.tabLiquidationPrice)
-        self.liqQuantity.setObjectName(u"liqQuantity")
-        self.liqQuantity.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.label_19 = QLabel(self.tabLiquidationPrice)
+        self.label_19.setObjectName(u"label_19")
 
-        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.liqQuantity)
+        self.formLayout_3.setWidget(1, QFormLayout.LabelRole, self.label_19)
 
         self.liqLeverage = QLineEdit(self.tabLiquidationPrice)
         self.liqLeverage.setObjectName(u"liqLeverage")
         self.liqLeverage.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
-        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.liqLeverage)
-
-        self.lilqBalance = QLineEdit(self.tabLiquidationPrice)
-        self.lilqBalance.setObjectName(u"lilqBalance")
-        self.lilqBalance.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
-
-        self.formLayout_3.setWidget(3, QFormLayout.FieldRole, self.lilqBalance)
+        self.formLayout_3.setWidget(1, QFormLayout.FieldRole, self.liqLeverage)
 
 
         self.verticalLayout_8.addLayout(self.formLayout_3)
@@ -985,9 +963,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"125", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Entry Price:", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Quantity (USDT):", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Leverage:", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Balance (USDT):", None))
         self.liqLeverage.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.liqCalculateBtn.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Result", None))
