@@ -28,14 +28,13 @@ class TakeProfitStopLoss(Tab):
         self.tab.findChild(QSlider, 'tpslLeverageSlider').mouseMoveEvent = self.leverage_slider_moved
         self.tab.findChild(QLineEdit, 'tpslLeverage').textChanged.connect(self.leverage_input_changed)
         self.tab.findChild(QLineEdit, 'tpslLeverage').editingFinished.connect(self.leverage_input_finished)
-        self.tab.findChild(QPushButton, 'tpslCalculateBtn').clicked.connect(self.calculate_pnl)
+        self.tab.findChild(QPushButton, 'tpslCalculateBtn').clicked.connect(self.calculate_tpsl)
 
 
     @Slot(QMouseEvent)
     def long_frame_pressed(self, event: QMouseEvent) -> None:
         self.trade_direction = 'Long'
         self.tab.findChild(QFrame, 'tpslLongFrame').setStyleSheet(self.long_style_sheet)
-        (red, green, blue) = self.get_background_color()
         self.tab.findChild(QFrame, 'tpslShortFrame').setStyleSheet(self.non_active_style_sheet)
 
 
@@ -43,7 +42,6 @@ class TakeProfitStopLoss(Tab):
     def short_frame_pressed(self, event: QMouseEvent) -> None:
         self.trade_direction = 'Short'
         self.tab.findChild(QFrame, 'tpslShortFrame').setStyleSheet(self.short_style_sheet)
-        (red, green, blue) = self.get_background_color()
         self.tab.findChild(QFrame, 'tpslLongFrame').setStyleSheet(self.non_active_style_sheet)
 
 
@@ -92,7 +90,7 @@ class TakeProfitStopLoss(Tab):
 
 
     @Slot()
-    def calculate_pnl(self) -> None:
+    def calculate_tpsl(self) -> None:
         try:
             entry_price = float(self.tab.findChild(QLineEdit, 'tpslEntryPrice').text())
             leverage = float(self.tab.findChild(QLineEdit, 'tpslLeverage').text())
