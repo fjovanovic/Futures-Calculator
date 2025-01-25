@@ -5,7 +5,8 @@ from PySide6.QtWidgets import (
     QFrame,
     QSlider,
     QStyle,
-    QLineEdit
+    QLineEdit,
+    QPushButton
 )
 
 from .tab import Tab
@@ -27,6 +28,7 @@ class LiquidationPrice(Tab):
         self.tab.findChild(QSlider, 'liqLeverageSlider').mouseMoveEvent = self.leverage_slider_moved
         self.tab.findChild(QLineEdit, 'liqLeverage').textChanged.connect(self.leverage_input_changed)
         self.tab.findChild(QLineEdit, 'liqLeverage').editingFinished.connect(self.leverage_input_finished)
+        self.tab.findChild(QPushButton, 'liqCalculateBtn').clicked.connect(self.calculate_liq_price)
 
 
     @Slot(QMouseEvent)
@@ -85,3 +87,20 @@ class LiquidationPrice(Tab):
     @Slot(int)
     def update_leverage_input(self, val: int) -> None:
         self.tab.findChild(QLineEdit, 'liqLeverage').setText(str(val))
+
+
+    @Slot()
+    def calculate_liq_price(self) -> None:
+        try:
+            entry_price = float(self.tab.findChild(QLineEdit, 'liqEntryPrice').text())
+            leverage = float(self.tab.findChild(QLineEdit, 'liqLeverage').text())
+        except:
+            self.bad_input('Entry price, exit price, quantity or leverage are either wrong or not filled')
+            return
+        
+        if self.trade_direction == 'Long':
+            liq_price = entry_price - (entry_price * (1 / leverage))
+        else:
+            liq_price = entry_price + (entry_price * (1 / leverage))
+        
+        self.tab.findChild(QLineEdit, 'liqLiquidationPrice').setText(f'{liq_price:,.2f}')
